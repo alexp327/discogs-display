@@ -26,7 +26,7 @@ export async function GET(request: Request) {
   }
 
   // could add sort parameters to sort by artist, title, etc.
-  const discogsUrl = `https://api.discogs.com/users/${username}/collection/folders/0/releases?page=1&per_page=500`;
+  const discogsUrl = `https://api.discogs.com/users/${username}/collection/folders/0/releases?sort=added&sort_order=desc&page=1&per_page=500`;
 
   try {
     const response = await fetch(discogsUrl, {

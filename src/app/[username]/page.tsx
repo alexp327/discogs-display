@@ -53,6 +53,7 @@ export default function UsernameDisplayPage({
                   alt={release.title}
                   width={144}
                   height={144}
+                  className='w-36 h-36'
                 />
                 <div className='flex flex-col justify-center'>
                   <p className='text-lg font-bold'>{release.title}</p>
