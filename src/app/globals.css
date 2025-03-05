@@ -126,7 +126,7 @@
   }
 }
 
-@keyframes slide {
+@keyframes slide-1 {
   0% {
     transform: translateX(0);
   }
@@ -135,11 +135,51 @@
   }
 }
 
-.group-slide:hover .animate-slide {
+@keyframes slide-2 {
+  0% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateX(-105%);
+  }
+}
+
+@keyframes slide-3 {
+  0% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(-102%);
+  }
+}
+
+.group-slide:hover .animate-slide-1 {
   animation-play-state: paused;
 }
 
-.animate-slide {
-  animation: slide 30s linear infinite;
+.animate-slide-1 {
+  animation: slide-1 50s linear infinite;
+}
+
+.group-slide:hover .animate-slide-2 {
+  animation-play-state: paused;
+}
+
+.animate-slide-2 {
+  animation: slide-2 47s linear infinite;
+}
+
+.group-slide:hover .animate-slide-3 {
+  animation-play-state: paused;
+}
+
+.animate-slide-3 {
+  animation: slide-3 53s linear infinite;
+}
+
+@media (hover: none) {
+  .nonhover-title {
+    display: block !important;
+  }
 }
 

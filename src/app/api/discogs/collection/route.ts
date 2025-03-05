@@ -7,10 +7,19 @@ import { NextResponse } from 'next/server';
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const username = searchParams.get('username');
+  const sort = searchParams.get('sort');
+  const sortOrder = searchParams.get('sort_order');
 
   if (!username) {
     return NextResponse.json(
       { error: 'Discogs username is missing' },
+      { status: 400 }
+    );
+  }
+
+  if (!sort || !sortOrder) {
+    return NextResponse.json(
+      { error: 'Sort or sort_order query parameters are missing' },
       { status: 400 }
     );
   }
@@ -25,8 +34,7 @@ export async function GET(request: Request) {
     );
   }
 
-  // could add sort parameters to sort by artist, title, etc.
-  const discogsUrl = `https://api.discogs.com/users/${username}/collection/folders/0/releases?sort=added&sort_order=desc&page=1&per_page=500`;
+  const discogsUrl = `https://api.discogs.com/users/${username}/collection/folders/0/releases?sort=${sort}&sort_order=${sortOrder}&page=1&per_page=10`;
 
   try {
     const response = await fetch(discogsUrl, {
