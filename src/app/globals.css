@@ -137,19 +137,19 @@
 
 @keyframes slide-2 {
   0% {
-    transform: translateX(-5%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-105%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes slide-3 {
   0% {
-    transform: translateX(-2%);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(-102%);
+    transform: translateX(-100%);
   }
 }
 
